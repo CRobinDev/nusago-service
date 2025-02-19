@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notifikasi NusaGo</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #77B684;
+            font-size: 22px;
+        }
+        p {
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #77B684;
+        }
+        .features {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .features li {
+            list-style: none;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 16px;
+        }
+        .features li:before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #2c7a7b;
+            font-size: 18px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #5F926A;
+            color: #EBF4ED !important;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background-color: #6BA477;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Berita Menarik untuk Kamu, {{ .Fullname}}! 🎉</h1>
+        <p>Halo <span class="highlight">{{ .Fullname}}</span>,</p>
+        <p>Kami punya kabar baik untukmu! 🎊 Seperti yang dijanjikan, kamu menjadi yang pertama tahu bahwa Fitur <strong>{{ .Feature }}</strong> di <strong>NusaGo</strong> akhirnya telah rilis! 🌱✨</p>
+
+        <p><strong>Dengan Peta Hijau, kamu bisa:</strong></p>
+        <ul class="features">
+            <li>✅ Melihat data emisi, tutupan lahan, dan vegetasi secara real-time 🌍</li>
+            <li>✅ Membantu perencanaan kota hijau yang lebih berkelanjutan 🏙</li>
+            <li>✅ Menggunakan teknologi remote sensing untuk wawasan yang lebih akurat 📡</li>
+        </ul>
+
+        <p>Jangan sampai ketinggalan! Langsung cek fitur terbaru kami sekarang.</p>
+        <a href="{{ .Link }}" class="cta-button">🔗 Coba Sekarang</a>
+
+        <p>Jika ada pertanyaan atau feedback, kami selalu siap mendengar! 💚</p>
+
+        <div class="footer">
+            <p>Selamat mencoba & have fun!<br>&mdash; Tim NusaGo 🌿</p>
+        </div>
+    </div>
+</body>
+</html>
