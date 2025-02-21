@@ -32,24 +32,3 @@ func Authenticate(jwtService jwt.IJWT) fiber.Handler {
 	}
 }
 
-func AuthenticateGRPC() fiber.Handler {
-	return func(c *fiber.Ctx) error {
-		bearer := c.Get("Authorization")
-		if bearer == "" {
-			return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Unauthorized"})
-		}
-
-		tokenSlice := strings.Split(bearer, " ")
-		if len(tokenSlice) != 2 {
-			return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Unauthorized"})
-		}
-
-		if tokenSlice[0] != "Bearer" {
-			return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Unauthorized"})
-		}
-
-		c.Locals("token", tokenSlice[1])
-
-		return c.Next()
-	}
-}
