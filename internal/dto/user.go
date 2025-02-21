@@ -34,8 +34,8 @@ type DeleteRequest struct {
 
 type NotificationRequest struct {
 	ID       uuid.UUID `json:"-"`
-	Email    string    `json:"-"`
-	Fullname string    `json:"fullname" validate:"required"`
+	Email    string    `json:"email"`
+	Fullname string    `json:"fullname"`
 	Feature  string    `json:"feature" validate:"required,oneof=Blog Portofolio"`
 	Link     string    `json:"link" validate:"required"`
 }
@@ -51,6 +51,6 @@ type TokenLoginResponse struct {
 	Username    string    `json:"username"`
 	Fullname    string    `json:"fullname"`
 	Institution string    `json:"institution"`
+	Email       string    `json:"email"`
 	Description string    `json:"description"`
 }
-

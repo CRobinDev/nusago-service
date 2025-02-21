@@ -102,6 +102,7 @@ func (us *userService) GetUser(req dto.TokenLoginRequest) (dto.TokenLoginRespons
 		Username:    user.Username,
 		Fullname:    user.Fullname,
 		Institution: user.Institution,
+		Email:       user.Email,
 		Description: user.Description,
 	}, nil
 }
@@ -145,7 +146,9 @@ func (us *userService) SendNotification(req dto.NotificationRequest) error {
 	if err != nil {
 		return err
 	}
+	req.Fullname = user.Fullname
 	req.Email = user.Email
+
 	if err := us.gomail.SendNotification(req); err != nil {
 		return &response.ErrFailedSendNotification
 	}

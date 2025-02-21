@@ -26,7 +26,6 @@ type token struct {
 type Claims struct {
 	UserID      uuid.UUID `json:"user_id"`
 	Username    string    `json:"username"`
-	Fullname    string    `json:"fullname"`
 	jwt.RegisteredClaims
 }
 
@@ -49,7 +48,6 @@ func (t *token) CreateToken(user *entity.User) (string, error) {
 	claims := Claims{
 		UserID:   user.ID,
 		Username: user.Username,
-		Fullname: user.Fullname,
 		RegisteredClaims: jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(time.Now().Add(t.ExpiredTime)),
 		},
