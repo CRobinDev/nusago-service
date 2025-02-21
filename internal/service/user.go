@@ -102,6 +102,7 @@ func (us *userService) GetUser(req dto.TokenLoginRequest) (dto.TokenLoginRespons
 		Username:    user.Username,
 		Fullname:    user.Fullname,
 		Institution: user.Institution,
+		Description: user.Description,
 	}, nil
 }
 

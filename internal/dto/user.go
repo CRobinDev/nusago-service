@@ -51,17 +51,6 @@ type TokenLoginResponse struct {
 	Username    string    `json:"username"`
 	Fullname    string    `json:"fullname"`
 	Institution string    `json:"institution"`
+	Description string    `json:"description"`
 }
 
-// type Features uint8
-
-// const (
-// 	Unknown    Features = 0
-// 	Portofolio Features = 1
-// 	Blog       Features = 2
-// )
-
-// var FeaturesMap = map[Features]string{
-// 	Portofolio: "Portofolio",
-// 	Blog:       "Blog",
-// }

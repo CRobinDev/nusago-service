@@ -172,14 +172,3 @@ func (uh *userHandler) Notification() fiber.Handler {
 		return response.Success(c, nil)
 	}
 }
-
-// func parseFeatureRequest(feature string) (dto.Features, error) {
-// 	switch feature {
-// 	case "portofolio":
-// 		return dto.Portofolio, nil
-// 	case "blog":
-// 		return dto.Blog, nil
-// 	default:
-// 		return dto.Unknown, errors.New("invalid feature")
-// 	}
-// }
